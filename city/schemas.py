@@ -2,7 +2,6 @@ from pydantic import BaseModel
 
 
 class CityBase(BaseModel):
-    id: int
     name: str
     additional_info: str | None = None
 
@@ -17,4 +16,4 @@ class City(CityBase):
     name: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
