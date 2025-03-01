@@ -7,6 +7,9 @@ class TemperatureBase(BaseModel):
     date_time: datetime
     temperature: float
 
+class TemperatureCreate(TemperatureBase):
+    pass
+
 
 class Temperature(TemperatureBase):
     id: int
