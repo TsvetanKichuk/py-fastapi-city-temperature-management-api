@@ -9,8 +9,7 @@ from city.crud import (
     delete_city_by_id,
     update_city_by_id
 )
-from city.models import City
-from city.schemas import CityCreate
+from city.schemas import CityCreate, City
 from database import SessionLocal
 
 router = APIRouter()
