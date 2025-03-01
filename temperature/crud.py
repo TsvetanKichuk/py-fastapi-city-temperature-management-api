@@ -3,6 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
 from temperature.models import Temperature
+from temperature.schemas import Temperature
 
 
 async def get_all_temperatures(
