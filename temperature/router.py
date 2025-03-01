@@ -1,12 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import NoResultFound
-from app.core.database import SessionLocal
-from app.schemas.temperature import Temperature, TemperatureBase
-from app.cruds.crud_temperature import (
-    get_all_temperatures,
-    get_temperature_by_id,
-)
+
+from database import SessionLocal
+from temperature.crud import get_all_temperatures, get_temperature_by_id
+from temperature.models import Temperature
 
 router = APIRouter()
 
