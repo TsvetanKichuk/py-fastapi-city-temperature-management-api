@@ -1,10 +1,8 @@
+from sqlalchemy.exc import NoResultFound
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from sqlalchemy.exc import NoResultFound
-from sqlalchemy.orm.exc import UnmappedInstanceError
-from app.models.temperature import Temperature
-from app.schemas.temperature import TemperatureBase
 
+from temperature.models import Temperature
 
 
 async def get_all_temperatures(
