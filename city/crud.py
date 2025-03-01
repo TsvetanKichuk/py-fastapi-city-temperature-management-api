@@ -2,8 +2,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.exc import NoResultFound
 from sqlalchemy.orm.exc import UnmappedInstanceError
-from app.models.city import City
-from app.schemas.city import CityCreate
+from city.models import City
+from schemas import CityCreate
 
 
 async def create_city(db: AsyncSession, city: CityCreate) -> City:
