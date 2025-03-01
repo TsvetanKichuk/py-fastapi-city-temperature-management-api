@@ -3,8 +3,8 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import NoResultFound
 
 from database import SessionLocal
-from temperature.crud import get_all_temperatures, get_temperature_by_id
-from temperature.schemas import Temperature
+from temperature.crud import get_all_temperatures, get_temperature_by_id, create_temperature
+from temperature.schemas import Temperature, TemperatureCreate
 
 router = APIRouter()
 
@@ -13,6 +13,10 @@ async def get_db():
     async with SessionLocal() as session:
         yield session
 
+
+@router.post("/temperatures", response_model=Temperature)
+async def create_temperature_endpoint(temperature: TemperatureCreate, db: AsyncSession = Depends(get_db)):
+    return await create_temperature(db=db, temperature=temperature)
 
 
 @router.get("/temperatures", response_model=list[Temperature])
