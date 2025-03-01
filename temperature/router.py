@@ -4,7 +4,7 @@ from sqlalchemy.exc import NoResultFound
 
 from database import SessionLocal
 from temperature.crud import get_all_temperatures, get_temperature_by_id
-from temperature.models import Temperature
+from temperature.schemas import Temperature
 
 router = APIRouter()
 
