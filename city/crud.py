@@ -3,7 +3,7 @@ from sqlalchemy.future import select
 from sqlalchemy.exc import NoResultFound
 from sqlalchemy.orm.exc import UnmappedInstanceError
 from city.models import City
-from schemas import CityCreate
+from city.schemas import CityCreate, City
 
 
 async def create_city(db: AsyncSession, city: CityCreate) -> City:
