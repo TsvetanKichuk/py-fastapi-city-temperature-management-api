@@ -1,15 +1,17 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import NoResultFound
-from app.core.database import SessionLocal
-from app.schemas.city import City, CityCreate
-from app.cruds.crud_city import (
+
+from city.crud import (
     create_city,
     get_all_cities,
     get_city_by_id,
     delete_city_by_id,
     update_city_by_id
 )
+from city.models import City
+from city.schemas import CityCreate
+from database import SessionLocal
 
 router = APIRouter()
 
