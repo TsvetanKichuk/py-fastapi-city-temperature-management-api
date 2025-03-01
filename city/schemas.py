@@ -1,10 +1,11 @@
 from pydantic import BaseModel
-from typing import Optional
 
 
 class CityBase(BaseModel):
+    id: int
     name: str
-    additional_info: Optional[str] = None
+    additional_info: str | None = None
+
 
 
 class CityCreate(CityBase):
@@ -13,6 +14,7 @@ class CityCreate(CityBase):
 
 class City(CityBase):
     id: int
+    name: str
 
     class Config:
         orm_mode = True
